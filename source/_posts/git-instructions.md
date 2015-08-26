@@ -16,7 +16,7 @@ git remote rm origin
 
 git push -u origin master 推送master分支
 git push -u origin --all  推送所有分支
--u表示默认，下次可无参使用git push
+-u表示追踪分支，下次可无参使用git push
 
 git clone url
 
