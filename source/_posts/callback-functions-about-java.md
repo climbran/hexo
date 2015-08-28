@@ -4,22 +4,22 @@ tags: [java]
 ---
 C语言中回调函数由指针实现，java 中没有指针，可以通过以下方法实现：
 
-<pre>
+{% codeblock lang:java %}
 public interface MyCallInterface{
 	public void method();
 }
-</pre>
-<pre>
+{% endcodeblock %}
+{% codeblock lang:java %}
 public Client implements MyCallInterface{
 	@Override
 	public void method(){
 		//TODO: 回调内容
 	}
 }
-</pre>
+{% endcodeblock %}
 
 调用时：
-<pre>
+{% codeblock lang:java %}
 public class Caller{
 	private MyCallInterface callInterface;
 
@@ -34,8 +34,8 @@ public class Caller{
 		callInterface.method();
 	}
 }
-</pre>
-<pre>
+{% endcodeblock %}
+{% codeblock lang:java %}
 public class Test{
 	public static void main(String args){
 		Caller caller = new Caller();
@@ -43,20 +43,20 @@ public class Test{
 		client.call();
 	}
 }
-</pre>
+{% endcodeblock %}
 或者
-<pre>
+{% codeblock lang:java %}
 public class Caller{
 	public void call(Client client){
 		client.method();
 	}
 }
-</pre>
-<pre>
+{% endcodeblock %}
+{% codeblock lang:java %}
 public class Test{
 	public static void main(String args){
 		Caller caller = new Caller();
 		caller.call(new Client());
 	}
 }
-</pre>
+{% endcodeblock %}

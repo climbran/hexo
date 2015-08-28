@@ -2,8 +2,7 @@ title: Iterator的实现
 date: 2015-08-1 17:26:08
 tags: [设计模式,java]
 ---
-<pre>
-<code>
+{% codeblock lang:java %}
 interface Iterator{
 	boolean end();
 	Object current();
@@ -13,7 +12,7 @@ interface Iterator{
 public class Sequence{
 	private Object[] items;
 	private next = 0;
-	
+		
 	public Sequence(int size){
 		items = new Objec[size];
 	}
@@ -41,5 +40,4 @@ public class Sequence{
 		return new SequenceIterator();
 	}
 }
-</code>
-</pre>
+{% endcodeblock %}

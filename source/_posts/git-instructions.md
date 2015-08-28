@@ -2,7 +2,7 @@ title: git常用指令
 date: 2015-04-26 16:10:15
 tags: [git]
 ---
-<pre>
+{% codeblock %}
 git config --global user.name "name"
 git config --global user.email email@email.com
 git config --global alias.co checkout 
@@ -21,4 +21,4 @@ git push -u origin --all  推送所有分支
 git clone url
 
 ssh-keygen 三次空格，.ssh/id_rsa.pub下为key
-</pre>
+{% endcodeblock %}
