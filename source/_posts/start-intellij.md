@@ -11,7 +11,7 @@ tags: [intelliJ]
 在项目上右键，选择open modules setting,参照以前eclipse下的spring项目建立以下目录结构：<br>
 <img width="500" src="/img/start-intellij/2.png"><br><br>
 然后根据个人习惯修改配置，我的配置如下：
-{% codeblock lang:xml %}
+{% codeblock web.xml lang:xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
@@ -27,6 +27,13 @@ tags: [intelliJ]
 			classpath*:/applicationContext.xml
 		</param-value>
 	</context-param>
+	
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+  	
   	<servlet>
 		<servlet-name>springServlet</servlet-name>
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -44,7 +51,7 @@ tags: [intelliJ]
 {% endcodeblock %}
 <br>
 web.xml配置了applicationContext.xml和spring-mvc.xml两个文件,在src/main/resources目录下新建applicationContext.xml：
-{% codeblock lang:xml %}
+{% codeblock applicationContext.xml lang:xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -64,7 +71,7 @@ web.xml配置了applicationContext.xml和spring-mvc.xml两个文件,在src/main/
 {% endcodeblock %}
 <br><br>
 将src/main/webapp/WEB-INF目录下除web.xml的另一个xml文件rename为spring-mvc.xml（对应web.xml中DispatcherServlet的配置，不填默认为[servelet-name]-servlet.xml）:
-{% codeblock lang:xml %}
+{% codeblock spring-mvc.xml lang:xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
