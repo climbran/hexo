@@ -142,7 +142,7 @@ public class User {
 }
 {% endcodeblock %}
 
-在src/main/resources下新建文件夹mybatis,再在mybatis下新建文件UerMapper.xml
+在src/main/resources下新建文件夹mybatis,再在mybatis下新建文件UserMapper.xml
 {% codeblock UserMapper.xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -163,7 +163,7 @@ public class User {
 {% endcodeblock %}
 以前使用的JPA貌似public schema下载@Table注解中public可以省略，不过mybatis测试时from语句不写public会报错BadSqlGrammarException
 
-applicationContext.xml中org.mybatis.spring.mapper.MapperScannerConfigurer配置了dao层文件所在位置，所以根据UerMapper.xml中的配置，对应的java文件为：
+applicationContext.xml中org.mybatis.spring.mapper.MapperScannerConfigurer配置了dao层文件所在位置，所以根据UserMapper.xml中的配置，对应的java文件为：
 {% codeblock UserDao.java %}
 package com.climbran.spring.repository;
 
