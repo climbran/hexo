@@ -35,4 +35,6 @@ static{}，会在类被加载的时候执行且仅会被执行一次，一般用
 <br><br>
 以下两种情况类不会加载:<br>
 1、调用类的静态常量的时候，是不会加载类的，即不会执行static{}语句块，读者可以自己验证一下(将main()函数的内容改为System.out.println(Test.Y);)，你会发现程序只输出了一个200；(这是java虚拟机的规定，当访问类的静态常量时，如果编译器可以计算出常量的值，则不会加载类，否则会加载类)<br>
-2、用Class.forName()形式的时候，我们也可以自己设定要不要加载类，如将Class.forName("Test")改为 Class.forName("Test",false,StaticBlockTest.class.getClassLoader())，你会发现程序什么都没有输出，即Test没有被加载，static{}没有被执行。
+2、用Class.forName()形式的时候，我们也可以自己设定要不要加载类，如将Class.forName("Test")改为 Class.forName("Test",false,StaticBlockTest.class.getClassLoader())，你会发现程序什么都没有输出，即Test没有被加载，static{}没有被执行。<br><br>
+当带satic的静态初始化块与不带staic的非静态初始化块同时需要执行时，按照以下顺序执行：<br>
+所有类的静态初始化块(从父类自顶向下) --> 所有类的普通初始化块(从父类自顶向下) --> 类的构选器(从父类自顶向下)

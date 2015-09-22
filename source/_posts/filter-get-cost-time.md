@@ -4,7 +4,6 @@ tags: [Spring MVC]
 ---
 项目需要在日志中记录每个请求花费的时间开销，算是开始web开发的第一个任务，度娘到Filter这个东西，做出以下是实现：
 {% codeblock lang:java %}
-package com.lemon.web.filter;
 
 import java.io.IOException;
 
