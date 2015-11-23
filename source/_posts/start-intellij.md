@@ -89,6 +89,9 @@ web.xml配置了applicationContext.xml和spring-mvc.xml两个文件,在src/main/
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp" />
     <bean>
+    
+    <mvc:annotation-driven/>
+    
 </beans>
 {% endcodeblock %}
 <br><br>
