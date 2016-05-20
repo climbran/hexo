@@ -9,3 +9,9 @@ tags: [hexo]
 两个项目作者一个是台湾大学生，一个是北理大学生，膜拜一下<br><br>
 配置起来很顺利，就是在配置category和tags插件的时候要生成带有categories和tags的文章后插件才能显示出来，配置好后以为没成功折腾了好一会。<br><br>
 配置好后将源文件上传github，方便在其他地方使用。其他电脑上clone下来后需先配置好环境，再在工程目录下运行npm install。<br><br>
+
+-----------2015.12.4更新---------------<br>
+使用<a href="https://github.com/coneycode/hexo-generator-baidu-sitemap">hexo-generator-baidu-sitemap</a>生成sitemap,在github上clone后需要在工程目录下运行
+{% codeblock %}
+$ npm install hexo-generator-baidu-sitemap@0.1.1 --save
+{% endcodeblock %}

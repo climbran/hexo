@@ -102,7 +102,7 @@ google_analytics:
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
 baidu_tongji:
   enable: true
-  sitecode: 2a87f3d11d7995f9422f99cc98af3e84 ## e.g. e6d1f421bbc9962127a50488f9ed37d1 your baidu tongji site code
+  sitecode: 673791ea3b7abd4cc4c8cb49be8c48a8 ## e.g. e6d1f421bbc9962127a50488f9ed37d1 your baidu tongji site code
 cnzz_tongji:
   enable: false
   siteid:    ## e.g. 1253575964 your cnzz tongji site id
@@ -123,6 +123,9 @@ google_cse:
 ## layout: search 
 ## title: search
 ## ---
+baidusitemap:
+  path: baidusitemap.xml
+
 baidu_search:     ## http://zn.baidu.com/
   enable: false
   id:   ## e.g. "783281470518440642"  for your baidu search id
