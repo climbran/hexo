@@ -72,5 +72,5 @@ stylus:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@git.coding.net:yanwq/yanwq.git
+  repo: git@git.coding.net:yanwq/swe.git
   branch: gitcafe-pages
