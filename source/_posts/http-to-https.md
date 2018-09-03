@@ -1,11 +1,11 @@
-title: https迁移
+title: http过渡到https实战分享
 date: 2016-07-14 22:12:49
 tags: [https]
 ---
-背景：为了防止链路劫持，公司将部分业务从http迁移到https，在线上已有大量业务的情况下，不可能直接整体切换到https，需要进行灰度切换，本文不关注https的实现原理，主要关注如何方便、快速的将线上服务从http灰度切换到https。
+>背景：为了防止链路劫持，公司将部分业务从http迁移到https，在线上已有大量业务的情况下，不可能直接整体切换到https，需要进行灰度切换，本文不关注https的实现原理，主要关注如何方便、快速的将线上服务从http灰度切换到https。
 
 一、整体思路
-&emsp;&emsp;对于网站来说，主要有最外层的页面、外层一面依赖的内层页面（如iframe）和加载的静态资源（js、css、img）。
+&emsp;&emsp;对于网站来说，主要有最外层的页面、外层页面依赖的内层页面（如iframe）和加载的静态资源（js、css、img）。
 &emsp;&emsp;而https页面中的http链接，叫做混合内容（mixed content）。根据混合内容被劫持后可能赵成的危害程度，混合内容又分为Optionally-blockable（如图片）和Blockable（如iframe、js、css、XMLHttpRequest）。其中Optionally-blockable加载时会在浏览器控制台输出警告信息，但能正常显示，Blockable则完全无法加载。
 &emsp;&emsp;基于上述原因，我们首先需要让存放静态资源的cdn服务器能支持https访问，其次是内层页面需要支持https，最后是外层页面需要支持https。<br>
 二、页面链接
